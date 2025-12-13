@@ -1,0 +1,19 @@
+ openvpn-server@server.service - OpenVPN service for server
+     Loaded: loaded (/usr/lib/systemd/system/openvpn-server@.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2025-12-13 06:43:26 UTC; 3h 32min ago
+       Docs: man:openvpn(8)
+             https://openvpn.net/community-resources/reference-manual-for-openvpn-2-6/
+             https://community.openvpn.net/openvpn/wiki/HOWTO
+   Main PID: 12051 (openvpn)
+     Status: "Initialization Sequence Completed"
+      Tasks: 1 (limit: 2267)
+     Memory: 1.7M (peak: 2.2M)
+        CPU: 2.900s
+     CGroup: /system.slice/system-openvpn\x2dserver.slice/openvpn-server@server.service
+             └─12051 /usr/sbin/openvpn --status /run/openvpn-server/status-server.log --status-version >
+
+Dec 13 06:43:26 us-server systemd[1]: Starting openvpn-server@server.service - OpenVPN service for serv>
+Dec 13 06:43:26 us-server openvpn[12051]: WARNING: Compression for receiving enabled. Compression has b>
+Dec 13 06:43:26 us-server systemd[1]: Started openvpn-server@server.service - OpenVPN service for serve>
+lines 1-17/17 (END)
+

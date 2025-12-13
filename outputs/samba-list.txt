@@ -1,1 +1,33 @@
+Server: 10.8.0.1
+Samba User: smbuser
+Password: 1234
+
+[biomed-share]
+   Comment: BioMed Confidential Project Share
+   Path: /srv/samba/biomed-share
+   Browseable: yes
+   Read Only: no
+   Guest Access: no
+   Valid Users: smbuser
+   Create Mask: 0755
+   Directory Mask: 0755
+
+project-data.txt
+srilanka-data.txt
+
+smbclient -L 10.8.0.1 -U smbuser
+
+smbclient //10.8.0.1/biomed-share -U smbuser
+ls
+get project-data.txt
+exit
+
+sudo mkdir -p /mnt/us-biomed-share
+sudo mount -t cifs //10.8.0.1/biomed-share /mnt/us-biomed-share \
+    -o username=smbuser,password=1234
+ls -la /mnt/us-biomed-share/
+cat /mnt/us-biomed-share/project-data.txt
+
+echo "AI/ML Algorithm Data - Sri Lanka Office" | sudo tee /mnt/us-biomed-share/srilanka-data.txt
+ls -la /mnt/us-biomed-share/
 
